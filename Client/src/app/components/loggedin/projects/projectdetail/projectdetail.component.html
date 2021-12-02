@@ -1,0 +1,23 @@
+<div class="row projectrow d-flex flex-row justify-content-around">
+  <div class="col-4-md">
+    <h4 [hidden]="!hideEdit" class="project-txt">{{project.pname}}</h4>
+      <input [hidden]="hideEdit" type="text" class="form-control" placeholder="Edit Projectname"
+             aria-label="editProject"
+             aria-describedby="basic-addon1" [(ngModel)]="project.pname">
+      <div class="col-3-md">
+        <button type="button" class="btn actionbtn" (click)="delete()">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+        <button type="button" class="btn actionbtn" (click)="open()">
+          <i class="fas fa-folder-open"></i>
+        </button>
+        <button [hidden]="!hideEdit" type="button" class="btn actionbtn" (click)="hideEdit = !hideEdit">
+          <i class="fas fa-pencil-alt"></i>
+        </button>
+        <button [hidden]="hideEdit" type="button" class="btn actionbtn"
+                (click)="update(project.pname); hideEdit = !hideEdit">
+          <i class="fas fa-save"></i>
+        </button>
+      </div>
+    </div>
+  </div>

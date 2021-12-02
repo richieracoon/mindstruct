@@ -1,0 +1,29 @@
+.colorbox {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.black {
+  background-color: black;
+}
+
+.white {
+  background-color: white;
+}
+
+.red {
+  background-color: darkred;
+}
+
+.green {
+  background-color: darkgreen;
+}
+
+.blue {
+  background-color: darkblue;
+}
+
+/*# sourceMappingURL=app.component.css.map */

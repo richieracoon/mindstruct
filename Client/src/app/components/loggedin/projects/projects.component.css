@@ -1,0 +1,81 @@
+/*---------------------------------*/
+/*-------    Container    ---------*/
+/*---------------------------------*/
+.jumbotron {
+  background: #27275E;
+  border-bottom: 4px solid #38385E;
+  padding: 3rem 3rem 3rem 3rem;
+  margin: 0;
+}
+
+.projectbox {
+  background: #141440;
+  border-radius: 10px;
+  margin-top: 3rem;
+}
+
+/*---------------------------------*/
+/*--------    Contents    ---------*/
+/*---------------------------------*/
+.projectrow {
+  margin: 1rem 1rem 1rem 1rem;
+}
+
+table {
+  font-size: 1.5rem;
+}
+
+.fa-plus-square {
+  font-size: 2rem;
+}
+
+.actionbtn {
+  border: #FFFFFF 2px solid;
+  float: right;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  margin-left: 1rem;
+  opacity: 0.5;
+}
+
+.actionbtn:hover {
+  opacity: 1;
+}
+
+.project-txt:hover {
+  text-decoration-line: underline;
+}
+
+td {
+  border: none;
+}
+
+input {
+  background: rgba(196, 196, 196, 0.2);
+  color: white;
+}
+
+input:focus {
+  border-radius: 5px;
+  color: #27275E;
+  border-color: #27275E;
+  background: white;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem rgba(255, 255, 255, 0.25);
+}
+
+.form-check-input {
+  height: 1rem;
+  width: 1rem;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
+.form-check .actionbtn {
+  border: none;
+}
+
+.btn-transparent {
+  color: white;
+}
+
+/*# sourceMappingURL=projects.component.css.map */

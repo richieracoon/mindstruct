@@ -1,0 +1,54 @@
+.bg-img {
+  background-image: url("../../../assets/images/mindstruct-bg.jpg");
+  background-color: #cccccc;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+
+  color: white;
+}
+
+.row{
+  margin: 0;
+}
+
+.infotext {
+  text-align: left;
+  color: white;
+  padding-top: 10rem;
+  margin-left: 5rem;
+}
+
+.navbar a{
+  color: white;
+}
+
+.navbar-expand-sm{
+  margin-right: 0.3rem;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0);
+}
+
+.nav-item:hover{
+  border-bottom: #FFFFFF 1.5px solid;
+}
+
+.logolink {
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 36px;
+  line-height: 42px;
+}
+
+.frontbtn{
+  //background: #a65d78;
+  border: 3px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.frontbtn:hover{
+  box-shadow: 0 0 24px 9px rgba(255,255,255,0.62);
+}

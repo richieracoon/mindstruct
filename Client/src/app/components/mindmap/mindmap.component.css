@@ -1,0 +1,26 @@
+.main {
+  background: #27275E;
+}
+
+.svg {
+  background: #bcbcbc;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.svg-menu {
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+}
+
+.text {
+  color: #000000;
+}
+
+.header {
+  margin-left: 5%;
+}
+
+/*# sourceMappingURL=mindmap.component.css.map */

@@ -1,0 +1,127 @@
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h1>Welcome Back, {{this.authService.User.username}}!</h1>
+      <form>
+        <div class="row justify-content-center">
+          <div class="col-3">
+            <img class="avatar-wrapper" src="../../../../assets/images/user-avatar.jpg">
+          </div>
+          <div class="col-3">
+            <label for="usernameInput">Username</label>
+            <button type="button" class="btn editbtn" (click)="edituser = false"><i class="fas fa-pencil-alt"></i>
+            </button>
+            <input type="text" [disabled]="edituser || authService.User.isGoogle" (blur)="edituser=true" (keyup.enter)="edituser=true; edit()"
+                   class="form-control-plaintext" placeholder="Username" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" id="usernameInput">
+          </div>
+          <div class="col-3">
+            <label for="passwordInput">Password</label>
+            <button type="button" class="btn editbtn" (click)="editpass = false"><i class="fas fa-pencil-alt"></i>
+            </button>
+            <input type="password" [disabled]="editpass || authService.User.isGoogle" (blur)="editpass=true" (keyup.enter)="editpass=true; edit()"
+                   class="form-control-plaintext" placeholder="Password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" id="passwordInput">
+          </div>
+          <div class="col-3">
+            <label for="mailInput">Email</label>
+            <button type="button" class="btn editbtn" (click)="editmail = false"><i class="fas fa-pencil-alt"></i>
+            </button>
+            <input type="email" [disabled]="editmail || authService.User.isGoogle" (blur)="editmail = true" (keyup.enter)="editmail=true; edit()"
+                   class="form-control-plaintext" placeholder="Email" [(ngModel)]="usermail" [ngModelOptions]="{standalone: true}" id="mailInput">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h4>Last Project: {{lastproject}}</h4>
+      <div class="table-responsive-md">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">Fellowship</th>
+            <th scope="col">Main Participants</th>
+            <th scope="col">Mindmaps</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td>Max Power</td>
+            <td>Profiling</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td>Jane Doe</td>
+            <td>Brofiling</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td>John Doe</td>
+            <td>Grindmapping</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td>John Deaux</td>
+            <td>Brojecting</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <div class="row d-flex flew-row justify-content-between">
+        <div class="col-5-md">
+          <div class="wrapper">
+            <h4>Acitvities</h4>
+            <div class="table-responsive-sm">
+              <table class="table">
+                <tbody>
+                <tr>
+                  <th scope="row"></th>
+                  <td>Projects Initiated</td>
+                  <td>12</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td>People Invited</td>
+                  <td>23</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td>Nodes Created</td>
+                  <td>69</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-5-md">
+          <div class="wrapper">
+            <h4>Pending Invitations</h4>
+            <div class="table-responsive-sm">
+              <table class="table">
+                <thead>
+                <tr>
+                  <th scope="col">From</th>
+                  <th scope="col">To</th>
+                  <th scope="col">Answer</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let inv of invitationService.invitations">
+                  <td>{{inv.senderName}}</td>
+                  <td>{{inv.projectName}}</td>
+                  <td>
+                    <button class="answer-btn" (click)="acceptInvitation(inv.invitationID, inv.projectID)"><i class="far fa-check-square"></i></button>
+                    <button class="answer-btn" (click)="denyInvitation(inv.invitationID)"><i class="far fa-times-circle"></i></button>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </div>

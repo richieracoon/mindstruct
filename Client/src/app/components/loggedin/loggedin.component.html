@@ -1,0 +1,25 @@
+<div class="site-wrapper">
+  <div class="sidebar-container">
+    <ul class="sidebar-navigation">
+      <li>
+        <a routerLink="/loggedin/profile">
+          <i class="fas fa-user-circle"></i>Profile
+        </a>
+      </li>
+      <li>
+        <a routerLink="/loggedin/projects">
+          <i class="fas fa-project-diagram" aria-hidden="true"></i>Projects
+        </a>
+      </li>
+      <li *ngIf="this.authService.User.rights == 2">
+        <a routerLink="/loggedin/admin">
+          <i class="fas fa-tools"></i> Adminboard
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="content-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

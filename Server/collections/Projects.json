@@ -1,0 +1,2 @@
+{"_id":{"$oid":"5e18fc26963d3c7a784ff300"},"pname":"something else","creationDate":{"$date":{"$numberLong":"1578695718713"}}}
+{"_id":{"$oid":"5e1907f91d370f75a86557bc"},"pname":"neues projekt","creationDate":{"$date":{"$numberLong":"1578698745652"}}}

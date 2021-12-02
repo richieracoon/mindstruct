@@ -1,0 +1,2 @@
+{"_id":{"$oid":"5e18fc26963d3c7a784ff301"},"userID":"5e134f547c59e10c14b913bd","projectID":"5e18fc26963d3c7a784ff300","pRights":{"$numberInt":"0"},"entryDate":{"$date":{"$numberLong":"1578695718716"}}}
+{"_id":{"$oid":"5e1907f91d370f75a86557bd"},"userID":"5e1907b91d370f75a86557b9","projectID":"5e1907f91d370f75a86557bc","pRights":{"$numberInt":"0"},"entryDate":{"$date":{"$numberLong":"1578698745654"}}}

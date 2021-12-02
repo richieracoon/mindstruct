@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <div class="left-nav">
+    <a class="logolink" href="/landingpage">MindStruct</a>
+  </div>
+  <div class="right-nav" *ngIf="!authService.isLoggedIn">
+    <a class="navlink" href="/infopage">Login</a>
+    <a class="navlink" href="/mindmap">Mindmap</a>
+    <a class="navlink" href="/registerform">Register</a>
+    <a class="navlink" href="/loginform">Login</a>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

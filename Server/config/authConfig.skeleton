@@ -1,0 +1,13 @@
+import {iGoogleAuth} from './googleAuth';
+
+export class authConfig{
+
+    // skeleton template file for googleAuth.ts. Copy & save it as a TypeScript-file "authConfig.ts" & don't forget to compile it to Javascript.
+    // Set 'clientSecret' and 'clientID' to the Google-Developer values after registering your app at: https://console.developers.google.com/
+    // this comment can be deleted after copying & saving the file.
+    googleAuth: iGoogleAuth = {
+        clientID: '',
+        clientSecret: '',
+        callbackURL: 'https://localhost:8843/auth/google/callback'
+    };
+};

@@ -1,0 +1,59 @@
+.projectrow {
+  width: 80%;
+}
+
+h1, h4 {
+  margin-bottom: 3rem;
+}
+
+.editbtn {
+  border: #FFFFFF 1px solid;
+  float: right;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+
+.avatar-wrapper {
+  max-height: 120px;
+  max-width: 120px;
+  border-radius: 50%;
+}
+
+.jumbotron {
+  background: #27275E;
+  border-bottom: 4px solid #38385E;
+  padding: 3rem 3rem 3rem 3rem;
+  margin: 0;
+}
+
+input {
+  background: rgba(196, 196, 196, 0.2);
+  color: white;
+}
+
+input[disabled] {
+  border-radius: 5px;
+}
+
+input:focus {
+  border-radius: 5px;
+  color: #27275E;
+  border-color: #27275E;
+  background: white;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem rgba(255, 255, 255, 0.25);
+}
+
+td, th {
+  border: none;
+}
+
+.fa-times-circle {
+  margin-left: 1rem;
+}
+
+.answer-btn {
+  background: none;
+  border: none;
+}
+
+/*# sourceMappingURL=profiles.component.css.map */

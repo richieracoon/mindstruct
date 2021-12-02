@@ -1,0 +1,180 @@
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1>Manage Your Projects</h1>
+    <div class="row d-flex flew-row justify-content-around">
+      <div class="col-md-5 projectbox">
+        <div class="row d-flex flex-row justify-content-between align-items-stretch projectrow">
+          <div class="col-md-10">
+            <h3>Your Projects</h3>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-transparent" (click)="hideaddproject=!hideaddproject">
+              <i class="far fa-plus-square"></i>
+            </button>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row projectrow">
+                <div class="col-md-6">
+                  <input [hidden]="hideaddproject" type="text" class="form-control hiddenAddInput"
+                         placeholder="New Projectname" aria-label="addProject"
+                         aria-describedby="basic-addon1" [(ngModel)]="newPname">
+                </div>
+                <div class="col-md-3">
+                  <button [hidden]="hideaddproject" type="button" class="btn actionbtn"
+                          (click)="addProject(newPname); hideaddproject = !hideaddproject">
+                    <i class="fas fa-save"></i>
+                  </button>
+                </div>
+              </div>
+                <app-projectdetail *ngFor="let project of this.userprojects" [project]="project"
+                                   (updateEvent)="editProject($event)"
+                                   (deleteEvent)="deleteProject($event)" (openEvent)="openProject ($event)">
+
+                </app-projectdetail>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 projectbox">
+        <div class="row d-flex flex-row justify-content-between align-items-stretch projectrow">
+          <div class="col-md-10">
+            <h3>{{"Project: " + pickproject}}</h3>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-transparent" (click)="hideaddmindmap=!hideaddmindmap">
+              <i class="far fa-plus-square"></i>
+            </button>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="table-responsive-md">
+                <table class="table">
+                  <tbody>
+                  <tr [hidden]="hideaddmindmap" class="project-txt">
+                    <td>
+                      <input type="text" class="form-control" placeholder="New Mindmapname" aria-label="addMindmap"
+                             aria-describedby="basic-addon1" [(ngModel)]="addMindmap">
+                    </td>
+                    <td>
+                      <button type="button" class="btn actionbtn" (click)="newMindmap(); hideaddmindmap=!hideaddmindmap;">
+                        <i class="fas fa-save"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr *ngFor="let mindmap of this.mindmapService.mindmaps" class="project-txt">
+                    <td>{{mindmap.name}}</td>
+                    <td>
+                      <button type="button" class="btn actionbtn" (click)="deleteMindmap(mindmap.id)">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                      <button type="button" class="btn actionbtn" (click)="this.mindmapService.loadMindmap(mindmap.data, mindmap.id)">
+                        <i class="fas fa-folder-open"></i>
+                      </button>
+                      <button type="button" class="btn actionbtn" (click)="editMindmap(mindmap.id)">
+                        <i class="fas fa-pencil-alt"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex flew-row justify-content-around">
+      <div class="col-md-5 projectbox">
+        <div class="row d-flex flex-row justify-content-between align-items-stretch projectrow">
+          <div class="col-md-10">
+            <h3>Participants</h3>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-transparent" (click)="hideaddinvite=!hideaddinvite">
+              <i class="far fa-plus-square"></i>
+            </button>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="table-responsive-md">
+                <table class="table">
+                  <tbody>
+                  <tr [hidden]="hideaddinvite" class="project-txt">
+                    <td>
+                      <input type="text" class="form-control" placeholder="Type Username" aria-label="addPerson"
+                             aria-describedby="basic-addon1" [(ngModel)]="addPerson">
+                    </td>
+                    <td>
+                      <button type="button" class="btn actionbtn"
+                              (click)="addParticipant(); hideaddinvite=!hideaddinvite">
+                        <i class="fas fa-save"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr *ngFor="let participant of this.projectparticipants" class="project-txt">
+                    <td>
+                      <button class="btn btn-transparent" (click)="getUserRights(participant); pickparticipant = participant">{{participant}}</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn actionbtn" (click)="deleteParticipant(participant)">
+                        <i class="fas fa-user-slash"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 projectbox">
+        <div class="row d-flex flex-row justify-content-between align-items-stretch projectrow">
+          <div class="col-md-10">
+            <h3>{{pickparticipant + "´s Rights"}}</h3>
+            <h6> Hier sind die Rechte {{partRights}}</h6>
+            <div class="table-responsive-md">
+              <table class="table">
+                <tbody>
+                <div class="form-check" [ngSwitch]="partRights">
+                  <tr *ngSwitchCase="partRights == 0">
+                    <td>Admin</td>
+                    <td>
+                      <div class="actionbtn">
+
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="Admin">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr *ngSwitchCase="partRights == 1">
+                    <td>Contributor</td>
+                    <td>
+                      <div class="actionbtn">
+
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="Contributor">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr *ngSwitchCase="partRights == 2">
+                    <td>Admin</td>
+                    <td>
+                      <div class="actionbtn">
+
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="Spectator" checked>
+                      </div>
+                    </td>
+                  </tr>
+                </div>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <button type="button" class="btn actionbtn">
+              <i class="fas fa-save"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

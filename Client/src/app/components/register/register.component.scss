@@ -1,0 +1,31 @@
+.modal-header, .modal-body, .modal-footer{
+  background: #27275E;
+  color: white;
+  border: none !important;
+}
+
+input{
+  background: rgba(196, 196, 196, 0.2);
+  color: white;
+}
+
+input:focus{
+  color: #27275E;
+  border-color: #FFFFFF;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
+
+.close{
+  color: white;
+}
+
+.btn{
+  color: #FFFFFF;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.btn:hover{
+  color: #27275E;
+  background: #FFFFFF;
+}

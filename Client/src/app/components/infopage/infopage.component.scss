@@ -1,0 +1,62 @@
+.bg-img {
+  background-image: url("../../../assets/images/registry_v5.jpg");
+  background-color: #cccccc;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  color: white;
+  overflow: hidden;
+}
+
+.navbar a{
+  color: white;
+}
+
+.navbar-nav li{
+  margin: 0 1.2rem;
+}
+
+.navbar-expand-sm .navbar-nav .nav-link{
+  padding: 0.3rem;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0);
+}
+
+.nav-item:hover{
+  border-bottom: #FFFFFF 1.5px solid;
+  cursor: pointer;
+}
+
+.logolink {
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 36px;
+  line-height: 42px;
+}
+
+.wrapper{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: auto;
+  color: white;
+}
+
+h2{
+  text-align: center;
+}
+
+.icon{
+  display: block;
+  margin: 0 auto 2rem auto;
+  height: 14rem;
+}
+
+.textwrapper{
+  width: 75%;
+}
+
+.icon{
+  height: 300px;
+  width: 300px;
+}
